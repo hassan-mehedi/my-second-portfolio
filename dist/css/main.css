@@ -1,6 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,900&display=swap");
-html {
+html,
+body {
   font-size: 10px;
+  font-family: Poppins, sans-serif;
 }
 
 *,
@@ -43,11 +45,14 @@ nav {
   z-index: 1;
 }
 
+nav .list {
+  display: none;
+}
+
 nav .logo {
   color: #fff;
   font-size: 4.5rem;
   font-weight: 900;
-  font-family: Poppins, sans-serif;
 }
 
 nav .menu {
@@ -84,19 +89,31 @@ nav .menu li a::after {
 nav .menu li a {
   font-size: 1.5rem;
   font-weight: 600;
-  font-family: Poppins, sans-serif;
   color: #fff;
   padding: 10px 20px;
   position: relative;
 }
 
-nav .menu li a:hover::after {
+nav .menu li a:hover::after,
+nav .menu li a:focus::after {
   opacity: 1;
 }
 
 /* ========
     Home
    ======== */
+#Home::before {
+  content: "";
+  background: url(/images/Portfolio_Cover.png) no-repeat fixed bottom right;
+  background-size: cover;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  opacity: 1;
+}
+
 #Home {
   height: 100vh;
   width: 100%;
@@ -119,7 +136,6 @@ nav .menu li a:hover::after {
   font-size: 8rem;
   font-weight: 600;
   line-height: 8rem;
-  font-family: Poppins, sans-serif;
   color: #fff;
 }
 
@@ -127,43 +143,230 @@ nav .menu li a:hover::after {
   font-size: 2.5rem;
   font-weight: 400;
   line-height: 3.5rem;
-  font-family: Poppins, sans-serif;
   color: #cccccc;
 }
 
 #Home .info .hire-me-btn {
   cursor: pointer;
-  padding: 10px 55px;
+  padding: 10px 35px;
   border: 2px solid transparent;
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin: 20px 0px;
-  font-family: Poppins, sans-serif;
   font-weight: 500;
   border-radius: 5px;
-  background-color: #c4a51a;
+  background-color: #fbb401;
   color: #fff;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
 
-#Home .info .hire-me-btn:hover {
+#Home .info .hire-me-btn:hover,
+#Home .info .hire-me-btn:focus {
   background-color: transparent;
-  border: 2px solid #c4a51a;
+  border: 2px solid #fbb401;
 }
 
-#Home .image-container {
+/* ========
+    About
+   ======== */
+#About {
   height: 100vh;
-  width: 40%;
-  background-color: transparent;
-  position: absolute;
-  bottom: 0%;
-  right: 10%;
+  width: 100%;
+  position: relative;
+  background-color: #303131;
 }
 
-#Home .image-container img {
-  height: 100%;
+#About .about-container {
+  width: 90vw;
+  height: 70vh;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#About .about-container .about-image {
+  height: 400px;
+  width: 300px;
+  border: 5px solid white;
+}
+
+#About .about-container .about-image img {
   width: 100%;
+  height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+#About .about-container .description {
+  width: 800px;
+  height: 250px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+
+#About .about-container .description h1 {
+  font-size: 4rem;
+  color: #fbb401;
+}
+
+#About .about-container .description p {
+  font-size: 1.5rem;
+  color: #bac8d3;
+}
+
+#About .about-container .description .buttons .download-cv,
+#About .about-container .description .buttons .portfolio {
+  cursor: pointer;
+  font-size: 1.5rem;
+  font-weight: 500;
+  width: 200px;
+  height: 50px;
+  border-radius: 5px;
+  border: none;
+  margin: 0px 15px 0px 0px;
+  color: white;
+  letter-spacing: 0.1rem;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+#About .about-container .description .buttons .download-cv {
+  background-color: #fbb401;
+}
+
+#About .about-container .description .buttons .download-cv:hover {
+  border: 2px solid #fbb401;
+  background-color: transparent;
+}
+
+#About .about-container .description .buttons .portfolio {
+  background-color: transparent;
+  border: 2px solid #fbb401;
+}
+
+#About .about-container .description .buttons .portfolio:hover {
+  background-color: #fbb401;
+  border-radius: none;
+}
+
+/* ========
+    Media Queries
+   ======== */
+@media only screen and (max-width: 768px) {
+  nav {
+    padding: 5px 0px;
+    height: auto;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  nav .menu li a {
+    font-size: 2rem;
+    font-weight: 400;
+  }
+  #Home::before {
+    opacity: 0.75;
+  }
+  #Home {
+    height: 70vh;
+  }
+  #Home .info {
+    bottom: 50%;
+    -webkit-transform: translateY(50%);
+            transform: translateY(50%);
+  }
+  #Home .info .my-name {
+    text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+  }
+  #Home .info .work {
+    text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  nav {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  nav .list.open {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    height: 30px;
+    width: 30px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+  }
+  nav .list.open img {
+    height: 100%;
+    width: 100%;
+  }
+  nav .list.close {
+    display: none;
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    height: 30px;
+    width: 30px;
+    border: 2px solid #fff;
+    border-radius: 50%;
+  }
+  nav .list.close img {
+    height: 100%;
+    width: 100%;
+  }
+  nav .menu {
+    display: none;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    width: 100%;
+    padding: 0px 15px;
+  }
+  nav .menu li {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #cccccc;
+    padding: 10px 0px;
+  }
+  #Home .info .my-name {
+    font-size: 4rem;
+  }
+  #Home .info .work {
+    font-size: 2rem;
+  }
+  #Home .info .hire-me-btn {
+    padding: 10px 25px;
+    font-size: 1.5rem;
+    font-weight: 600;
+    letter-spacing: 0.15rem;
+  }
 }
 /*# sourceMappingURL=main.css.map */

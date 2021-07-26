@@ -8,8 +8,10 @@ $primary_extra_light_grey: #303131;
     border: 1px solid black;
 }
 
-html {
+html,
+body {
     font-size: 10px;
+    font-family: Poppins, sans-serif;
 }
 
 *,
@@ -44,12 +46,14 @@ nav {
     background-color: $primary_dark_grey;
     box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.5);
     z-index: 1;
+    .list {
+        display: none;
+    }
     .logo {
         // @include border();
         color: #fff;
         font-size: 4.5rem;
         font-weight: 900;
-        font-family: Poppins, sans-serif;
     }
     .menu {
         display: flex;
@@ -74,12 +78,12 @@ nav {
                 // @include border();
                 font-size: 1.5rem;
                 font-weight: 600;
-                font-family: Poppins, sans-serif;
                 color: #fff;
                 padding: 10px 20px;
                 position: relative;
             }
-            a:hover::after {
+            a:hover::after,
+            a:focus::after {
                 opacity: 1;
             }
         }
@@ -89,6 +93,18 @@ nav {
 /* ========
     Home
    ======== */
+
+#Home::before {
+    content: "";
+    background: url(/images/Portfolio_Cover.png) no-repeat fixed bottom right;
+    background-size: cover;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    opacity: 1;
+}
 
 #Home {
     height: 100vh;
@@ -107,45 +123,220 @@ nav {
             font-size: 8rem;
             font-weight: 600;
             line-height: 8rem;
-            font-family: Poppins, sans-serif;
             color: #fff;
         }
         .work {
             font-size: 2.5rem;
             font-weight: 400;
             line-height: 3.5rem;
-            font-family: Poppins, sans-serif;
             color: #cccccc;
         }
         .hire-me-btn {
             cursor: pointer;
-            padding: 10px 55px;
+            padding: 10px 35px;
             border: 2px solid transparent;
-            font-size: 2.5rem;
+            font-size: 2rem;
             margin: 20px 0px;
-            font-family: Poppins, sans-serif;
             font-weight: 500;
             border-radius: 5px;
-            background-color: #c4a51a;
+            background-color: #fbb401;
             color: #fff;
             transition: all 0.3s ease-in-out;
         }
-        .hire-me-btn:hover {
+        .hire-me-btn:hover,
+        .hire-me-btn:focus {
             background-color: transparent;
-            border: 2px solid #c4a51a;
+            border: 2px solid #fbb401;
         }
     }
-    .image-container {
-        height: 100vh;
-        width: 40%;
-        background-color: transparent;
+}
+
+/* ========
+    About
+   ======== */
+
+#About {
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    background-color: $primary_extra_light_grey;
+    .about-container {
+        width: 90vw;
+        height: 70vh;
         position: absolute;
-        bottom: 0%;
-        right: 10%;
-        img {
-            height: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        // border: 1px solid black;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        .about-image {
+            height: 400px;
+            width: 300px;
+            border: 5px solid white;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        .description {
+            // border: 1px solid black;
+            width: 800px;
+            height: 250px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: baseline;
+            h1 {
+                font-size: 4rem;
+                color: #fbb401;
+                // border: 1px solid black;
+            }
+            p {
+                font-size: 1.5rem;
+                color: #bac8d3;
+                // border: 1px solid black;
+            }
+            .buttons {
+                .download-cv,
+                .portfolio {
+                    cursor: pointer;
+                    font-size: 1.5rem;
+                    font-weight: 500;
+                    width: 200px;
+                    height: 50px;
+                    border-radius: 5px;
+                    border: none;
+                    margin: 0px 15px 0px 0px;
+                    color: white;
+                    letter-spacing: 0.1rem;
+                    transition: all 0.3s ease;
+                }
+                .download-cv {
+                    background-color: #fbb401;
+                }
+                .download-cv:hover {
+                    border: 2px solid #fbb401;
+                    background-color: transparent;
+                }
+                .portfolio {
+                    background-color: transparent;
+                    border: 2px solid #fbb401;
+                }
+                .portfolio:hover {
+                    background-color: #fbb401;
+                    border-radius: none;
+                }
+            }
+        }
+    }
+}
+
+/* ========
+    Media Queries
+   ======== */
+
+@media only screen and (max-width: 768px) {
+    // Navbar
+    nav {
+        padding: 5px 0px;
+        height: auto;
+        flex-direction: column;
+        .menu {
+            li {
+                a {
+                    font-size: 2rem;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+
+    #Home::before {
+        opacity: 0.75;
+    }
+
+    #Home {
+        height: 70vh;
+        .info {
+            bottom: 50%;
+            transform: translateY(50%);
+            .my-name {
+                text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+            }
+            .work {
+                text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    // Navbar
+    nav {
+        flex-direction: column;
+        .list.open {
+            // @include border();
+            display: block;
+            position: absolute;
+            top: 20px;
+            right: 15px;
+            height: 30px;
+            width: 30px;
+            border: 2px solid #fff;
+            border-radius: 50%;
+            img {
+                height: 100%;
+                width: 100%;
+            }
+        }
+        .list.close {
+            // @include border();
+            display: none;
+            position: absolute;
+            top: 20px;
+            right: 15px;
+            height: 30px;
+            width: 30px;
+            border: 2px solid #fff;
+            border-radius: 50%;
+            img {
+                height: 100%;
+                width: 100%;
+            }
+        }
+        .menu {
+            display: none;
+            flex-direction: column;
             width: 100%;
-            object-fit: cover;
+            padding: 0px 15px;
+            li {
+                width: 100%;
+                text-align: center;
+                border-bottom: 1px solid #cccccc;
+                padding: 10px 0px;
+                a {
+                }
+            }
+        }
+    }
+
+    #Home {
+        .info {
+            .my-name {
+                font-size: 4rem;
+            }
+            .work {
+                font-size: 2rem;
+            }
+            .hire-me-btn {
+                padding: 10px 25px;
+                font-size: 1.5rem;
+                font-weight: 600;
+                letter-spacing: 0.15rem;
+            }
         }
     }
 }
