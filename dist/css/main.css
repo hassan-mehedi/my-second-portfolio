@@ -80,7 +80,7 @@ nav .menu li a::after {
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
   padding: 2px 15px;
-  background-color: #ffed02;
+  background-color: #22cd6f;
   opacity: 0;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
@@ -154,7 +154,7 @@ nav .menu li a:focus::after {
   margin: 20px 0px;
   font-weight: 500;
   border-radius: 5px;
-  background-color: #fbb401;
+  background-color: #22cd6f;
   color: #fff;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
@@ -163,7 +163,7 @@ nav .menu li a:focus::after {
 #Home .info .hire-me-btn:hover,
 #Home .info .hire-me-btn:focus {
   background-color: transparent;
-  border: 2px solid #fbb401;
+  border: 2px solid #22cd6f;
 }
 
 /* ========
@@ -228,7 +228,7 @@ nav .menu li a:focus::after {
 
 #About .about-container .description h1 {
   font-size: 4rem;
-  color: #fbb401;
+  color: #22cd6f;
 }
 
 #About .about-container .description p {
@@ -253,21 +253,21 @@ nav .menu li a:focus::after {
 }
 
 #About .about-container .description .buttons .download-cv {
-  background-color: #fbb401;
+  background-color: #22cd6f;
 }
 
 #About .about-container .description .buttons .download-cv:hover {
-  border: 2px solid #fbb401;
+  border: 2px solid #22cd6f;
   background-color: transparent;
 }
 
 #About .about-container .description .buttons .portfolio {
   background-color: transparent;
-  border: 2px solid #fbb401;
+  border: 2px solid #22cd6f;
 }
 
 #About .about-container .description .buttons .portfolio:hover {
-  background-color: #fbb401;
+  background-color: #22cd6f;
   border-radius: none;
 }
 
@@ -284,7 +284,7 @@ nav .menu li a:focus::after {
 #Services h1 {
   text-align: center;
   font-size: 4rem;
-  color: #fbb401;
+  color: #22cd6f;
 }
 
 #Services .service_container {
@@ -378,8 +378,8 @@ nav .menu li a:focus::after {
       -ms-flex-pack: center;
           justify-content: center;
   font-size: 4rem;
-  color: #fbb401;
-  background-color: #252525;
+  color: #fff;
+  background-color: #22cd6f;
   margin-right: 1px;
 }
 
@@ -425,6 +425,176 @@ nav .menu li a:focus::after {
   font-size: 1.7rem;
   color: #fff;
   font-weight: 300;
+}
+
+/* ========
+    Projects
+   ======== */
+#Projects {
+  position: relative;
+  width: 100%;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 50px;
+  background-color: #303131;
+}
+
+#Projects h1 {
+  font-size: 4rem;
+  color: #22cd6f;
+}
+
+#Projects .project_type {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-top: 20px;
+}
+
+#Projects .project_type li {
+  position: relative;
+  cursor: pointer;
+  margin: 0px 10px;
+  color: #fff;
+}
+
+#Projects .project_type li::after {
+  content: "";
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  padding: 1.5px 5px;
+  background-color: #22cd6f;
+  opacity: 0;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+#Projects .project_type li:hover::after {
+  opacity: 1;
+}
+
+#Projects .project_type #all_btn::after {
+  content: "";
+  position: absolute;
+  bottom: 0%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  padding: 1.5px 5px;
+  background-color: #22cd6f;
+  opacity: 1;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+#Projects .project_container {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  grid-auto-rows: 251px;
+  grid-gap: 15px;
+  padding: 20px 50px;
+}
+
+#Projects .project_container .project_box {
+  cursor: pointer;
+  background-color: #252525;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#Projects .project_container .project_box img {
+  width: 50%;
+  height: 50%;
+}
+
+#Projects .project_container .project_box::after {
+  content: "Project";
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 4rem;
+  font-weight: 600;
+  color: #fff;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  opacity: 0;
+}
+
+#Projects .project_container .project_box::before {
+  content: "";
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  background-color: #22cd6f;
+  opacity: 0;
+}
+
+#Projects .project_container .project_box:hover::before {
+  opacity: 0.85;
+}
+
+#Projects .project_container .project_box:hover::after {
+  opacity: 1;
+}
+
+#Projects .websites_project_box {
+  display: none;
+}
+
+#Projects .games_project_box {
+  display: none;
+}
+
+#Projects .canvas_project_box {
+  display: none;
+}
+
+#Projects .animation_project_box {
+  display: none;
 }
 
 /* ========

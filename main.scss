@@ -4,6 +4,8 @@ $primary_dark_grey: #252525;
 $primary_light_grey: #2b2c2c;
 $primary_extra_light_grey: #303131;
 
+$dark_green: #22cd6f;
+
 @mixin border {
     border: 1px solid black;
 }
@@ -70,7 +72,7 @@ nav {
                 left: 50%;
                 transform: translateX(-50%);
                 padding: 2px 15px;
-                background-color: #ffed02;
+                background-color: $dark_green;
                 opacity: 0;
                 transition: all 0.5s ease-in-out;
             }
@@ -139,14 +141,14 @@ nav {
             margin: 20px 0px;
             font-weight: 500;
             border-radius: 5px;
-            background-color: #fbb401;
+            background-color: $dark_green;
             color: #fff;
             transition: all 0.3s ease-in-out;
         }
         .hire-me-btn:hover,
         .hire-me-btn:focus {
             background-color: transparent;
-            border: 2px solid #fbb401;
+            border: 2px solid $dark_green;
         }
     }
 }
@@ -191,7 +193,7 @@ nav {
             align-items: baseline;
             h1 {
                 font-size: 4rem;
-                color: #fbb401;
+                color: $dark_green;
                 // border: 1px solid black;
             }
             p {
@@ -215,18 +217,18 @@ nav {
                     transition: all 0.3s ease;
                 }
                 .download-cv {
-                    background-color: #fbb401;
+                    background-color: $dark_green;
                 }
                 .download-cv:hover {
-                    border: 2px solid #fbb401;
+                    border: 2px solid $dark_green;
                     background-color: transparent;
                 }
                 .portfolio {
                     background-color: transparent;
-                    border: 2px solid #fbb401;
+                    border: 2px solid $dark_green;
                 }
                 .portfolio:hover {
-                    background-color: #fbb401;
+                    background-color: $dark_green;
                     border-radius: none;
                 }
             }
@@ -248,7 +250,7 @@ nav {
         // border: 1px solid black;
         text-align: center;
         font-size: 4rem;
-        color: #fbb401;
+        color: $dark_green;
     }
     .service_container {
         width: 80vw;
@@ -320,9 +322,10 @@ nav {
             align-items: center;
             justify-content: center;
             font-size: 4rem;
-            color: #fbb401;
-            background-color: $primary_dark_grey;
+            color: #fff;
+            background-color: $dark_green;
             margin-right: 1px;
+            // text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
         }
         .container {
             width: 70vw;
@@ -355,6 +358,130 @@ nav {
                 }
             }
         }
+    }
+}
+
+/* ========
+    Projects
+   ======== */
+
+#Projects {
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    background-color: $primary_extra_light_grey;
+    h1 {
+        font-size: 4rem;
+        color: $dark_green;
+    }
+    .project_type {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        // border: 1px solid black;
+        font-size: 2rem;
+        font-weight: 600;
+        margin-top: 20px;
+        li {
+            position: relative;
+            cursor: pointer;
+            margin: 0px 10px;
+            color: #fff;
+        }
+        li::after {
+            content: "";
+            position: absolute;
+            bottom: 0%;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 1.5px 5px;
+            background-color: $dark_green;
+            opacity: 0;
+            transition: all 0.5s ease-in-out;
+        }
+        li:hover::after {
+            opacity: 1;
+        }
+        // Just For Showing Purpose
+        #all_btn::after {
+            content: "";
+            position: absolute;
+            bottom: 0%;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 1.5px 5px;
+            background-color: $dark_green;
+            opacity: 1;
+            transition: all 0.5s ease-in-out;
+        }
+    }
+    .project_container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-auto-rows: 251px;
+        grid-gap: 15px;
+        padding: 20px 50px;
+        .project_box {
+            cursor: pointer;
+            background-color: $primary_dark_grey;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            // border: 1px solid black;
+            img {
+                width: 50%;
+                height: 50%;
+            }
+        }
+        .project_box::after {
+            content: "Project";
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 4rem;
+            font-weight: 600;
+            color: #fff;
+            position: absolute;
+            top: 0px;
+            bottom: 0px;
+            left: 0px;
+            right: 0px;
+            opacity: 0;
+        }
+        .project_box::before {
+            content: "";
+            position: absolute;
+            top: 0px;
+            bottom: 0px;
+            left: 0px;
+            right: 0px;
+            background-color: $dark_green;
+            opacity: 0;
+        }
+        .project_box:hover::before {
+            opacity: 0.85;
+        }
+        .project_box:hover::after {
+            opacity: 1;
+        }
+    }
+    .websites_project_box {
+        display: none;
+    }
+    .games_project_box {
+        display: none;
+    }
+    .canvas_project_box {
+        display: none;
+    }
+    .animation_project_box {
+        display: none;
     }
 }
 
