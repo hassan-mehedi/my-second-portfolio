@@ -31,3 +31,55 @@ close.addEventListener("click", () => {
     navbar.style.backgroundColor = "transparent";
     flag_of_menu = true;
 });
+
+const all_btn = document.getElementById("all_btn");
+const website_btn = document.getElementById("website_btn");
+const games_btn = document.getElementById("games_btn");
+const canvas_btn = document.getElementById("canvas_btn");
+const animation_btn = document.getElementById("animation_btn");
+
+const all_project_box = document.querySelector(".all_project_box");
+const websites_project_box = document.querySelector(".websites_project_box");
+const games_project_box = document.querySelector(".games_project_box");
+const canvas_project_box = document.querySelector(".canvas_project_box");
+const animation_project_box = document.querySelector(".animation_project_box");
+
+all_btn.addEventListener("click", () => {
+    all_project_box.style.display = "grid";
+    websites_project_box.style.display = "none";
+    games_project_box.style.display = "none";
+    canvas_project_box.style.display = "none";
+    animation_project_box.style.display = "none";
+});
+
+website_btn.addEventListener("click", () => {
+    all_project_box.style.display = "none";
+    websites_project_box.style.display = "grid";
+    games_project_box.style.display = "none";
+    canvas_project_box.style.display = "none";
+    animation_project_box.style.display = "none";
+});
+
+games_btn.addEventListener("click", () => {
+    all_project_box.style.display = "none";
+    websites_project_box.style.display = "none";
+    games_project_box.style.display = "grid";
+    canvas_project_box.style.display = "none";
+    animation_project_box.style.display = "none";
+});
+
+canvas_btn.addEventListener("click", () => {
+    all_project_box.style.display = "none";
+    websites_project_box.style.display = "none";
+    games_project_box.style.display = "none";
+    canvas_project_box.style.display = "grid";
+    animation_project_box.style.display = "none";
+});
+
+animation_btn.addEventListener("click", () => {
+    all_project_box.style.display = "none";
+    websites_project_box.style.display = "none";
+    games_project_box.style.display = "none";
+    canvas_project_box.style.display = "none";
+    animation_project_box.style.display = "grid";
+});
