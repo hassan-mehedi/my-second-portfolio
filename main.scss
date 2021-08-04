@@ -408,17 +408,17 @@ nav {
             opacity: 1;
         }
         // Just For Showing Purpose
-        #all_btn::after {
-            content: "";
-            position: absolute;
-            bottom: 0%;
-            left: 50%;
-            transform: translateX(-50%);
-            padding: 1.5px 5px;
-            background-color: $dark_green;
-            opacity: 1;
-            transition: all 0.5s ease-in-out;
-        }
+        // #all_btn::after {
+        //     content: "";
+        //     position: absolute;
+        //     bottom: 0%;
+        //     left: 50%;
+        //     transform: translateX(-50%);
+        //     padding: 1.5px 5px;
+        //     background-color: $dark_green;
+        //     opacity: 1;
+        //     transition: all 0.5s ease-in-out;
+        // }
     }
     .project_container {
         display: grid;
@@ -427,49 +427,84 @@ nav {
         grid-gap: 15px;
         padding: 20px 50px;
         .project_box {
-            cursor: pointer;
             background-color: $primary_dark_grey;
             position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
             // border: 1px solid black;
+            .wrapper {
+                position: absolute;
+                bottom: 10%;
+                left: 50%;
+                transform: translateX(-50%);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 20px;
+                a {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+                .view_image,
+                .link_to_site {
+                    cursor: pointer;
+                    width: 50px;
+                    border-radius: 50%;
+                    height: 50px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: $primary_dark_grey;
+                    opacity: 0.5;
+                    img {
+                        width: 50%;
+                        height: 50%;
+                    }
+                }
+                .view_image:hover,
+                .link_to_site:hover {
+                    opacity: 1;
+                }
+            }
+
             img {
                 width: 100%;
                 height: 100%;
             }
         }
-        .project_box::after {
-            content: "Project";
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 4rem;
-            font-weight: 600;
-            color: #fff;
-            position: absolute;
-            top: 0px;
-            bottom: 0px;
-            left: 0px;
-            right: 0px;
-            opacity: 0;
-        }
-        .project_box::before {
-            content: "";
-            position: absolute;
-            top: 0px;
-            bottom: 0px;
-            left: 0px;
-            right: 0px;
-            background-color: $dark_green;
-            opacity: 0;
-        }
-        .project_box:hover::before {
-            opacity: 0.85;
-        }
-        .project_box:hover::after {
-            opacity: 1;
-        }
+        // .project_box::after {
+        //     content: "Project";
+        //     display: flex;
+        //     justify-content: center;
+        //     align-items: center;
+        //     font-size: 4rem;
+        //     font-weight: 600;
+        //     color: #fff;
+        //     position: absolute;
+        //     top: 0px;
+        //     bottom: 0px;
+        //     left: 0px;
+        //     right: 0px;
+        //     opacity: 0;
+        // }
+        // .project_box::before {
+        //     content: "";
+        //     position: absolute;
+        //     top: 0px;
+        //     bottom: 0px;
+        //     left: 0px;
+        //     right: 0px;
+        //     background-color: $dark_green;
+        //     opacity: 0;
+        // }
+        // .project_box:hover::before {
+        //     opacity: 0.85;
+        // }
+        // .project_box:hover::after {
+        //     opacity: 1;
+        // }
     }
     .websites_project_box {
         display: none;
@@ -482,6 +517,71 @@ nav {
     }
     .animation_project_box {
         display: none;
+    }
+}
+
+#Contact {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $primary_extra_light_grey;
+    .form {
+        // border: 1px solid black;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+        h1 {
+            font-size: 4rem;
+            color: #22cd6f;
+            margin-bottom: 50px;
+        }
+        .con {
+            .name,
+            .email {
+                width: 25vw;
+                border: none;
+                border-bottom: 2px solid #bac8d3;
+                background-color: transparent;
+                color: white;
+                margin: 10px;
+                padding: 10px 5px;
+                font-size: 1.5rem;
+            }
+        }
+        .message_container {
+            .message {
+                width: calc(50vw + 20px);
+                border: none;
+                border-bottom: 2px solid #bac8d3;
+                background-color: transparent;
+                color: white;
+                padding: 10px 5px;
+                font-size: 1.5rem;
+            }
+        }
+        .name:focus,
+        .email:focus,
+        .message:focus {
+            outline: none;
+            border-bottom: 2px solid #22cd6f;
+        }
+        #get_in_touch {
+            background-color: transparent;
+            padding: 15px 30px;
+            margin: 50px 0px 0px 0px;
+            border: 2px solid#bac8d3;
+            color: #fff;
+            font-size: 1.5rem;
+        }
+
+        #get_in_touch:hover {
+            cursor: pointer;
+            border: 2px solid #22cd6f;
+        }
     }
 }
 
