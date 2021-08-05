@@ -220,14 +220,16 @@ nav {
                     background-color: $dark_green;
                     border: 2px solid $dark_green;
                 }
-                .download-cv:hover {
+                .download-cv:hover,
+                .download-cv:focus {
                     background-color: transparent;
                 }
                 .portfolio {
                     background-color: transparent;
                     border: 2px solid $dark_green;
                 }
-                .portfolio:hover {
+                .portfolio:hover,
+                .portfolio:focus {
                     background-color: $dark_green;
                     border-radius: none;
                 }
@@ -404,7 +406,8 @@ nav {
             opacity: 0;
             transition: all 0.5s ease-in-out;
         }
-        li:hover::after {
+        li:hover::after,
+        li:focus::after {
             opacity: 1;
         }
         // Just For Showing Purpose
@@ -464,7 +467,9 @@ nav {
                     }
                 }
                 .view_image:hover,
-                .link_to_site:hover {
+                .link_to_site:hover,
+                .view_image:focus,
+                .link_to_site:focus {
                     opacity: 1;
                 }
             }
@@ -578,7 +583,8 @@ nav {
             font-size: 1.5rem;
         }
 
-        #get_in_touch:hover {
+        #get_in_touch:hover,
+        #get_in_touch:focus {
             cursor: pointer;
             border: 2px solid #22cd6f;
         }
@@ -705,6 +711,11 @@ nav {
             width: 90vw;
             grid-template-columns: 1fr 1fr;
         }
+    }
+
+    #Contact {
+        height: auto;
+        padding: 50px 0px;
     }
 }
 
@@ -859,6 +870,28 @@ nav {
             height: auto;
             width: 90vw;
             grid-template-columns: 1fr;
+        }
+    }
+
+    #Contact {
+        .form {
+            h1 {
+                font-size: 3rem;
+                margin-bottom: 10px;
+            }
+            .con {
+                display: flex;
+                flex-direction: column;
+                .name,
+                .email {
+                    width: 80vw;
+                }
+            }
+            .message_container {
+                .message {
+                    width: 80vw;
+                }
+            }
         }
     }
 }

@@ -257,7 +257,8 @@ nav .menu li a:focus::after {
   border: 2px solid #22cd6f;
 }
 
-#About .about-container .description .buttons .download-cv:hover {
+#About .about-container .description .buttons .download-cv:hover,
+#About .about-container .description .buttons .download-cv:focus {
   background-color: transparent;
 }
 
@@ -266,7 +267,8 @@ nav .menu li a:focus::after {
   border: 2px solid #22cd6f;
 }
 
-#About .about-container .description .buttons .portfolio:hover {
+#About .about-container .description .buttons .portfolio:hover,
+#About .about-container .description .buttons .portfolio:focus {
   background-color: #22cd6f;
   border-radius: none;
 }
@@ -492,7 +494,8 @@ nav .menu li a:focus::after {
   transition: all 0.5s ease-in-out;
 }
 
-#Projects .project_type li:hover::after {
+#Projects .project_type li:hover::after,
+#Projects .project_type li:focus::after {
   opacity: 1;
 }
 
@@ -576,7 +579,9 @@ nav .menu li a:focus::after {
 }
 
 #Projects .project_container .project_box .wrapper .view_image:hover,
-#Projects .project_container .project_box .wrapper .link_to_site:hover {
+#Projects .project_container .project_box .wrapper .link_to_site:hover,
+#Projects .project_container .project_box .wrapper .view_image:focus,
+#Projects .project_container .project_box .wrapper .link_to_site:focus {
   opacity: 1;
 }
 
@@ -677,7 +682,8 @@ nav .menu li a:focus::after {
   font-size: 1.5rem;
 }
 
-#Contact .form #get_in_touch:hover {
+#Contact .form #get_in_touch:hover,
+#Contact .form #get_in_touch:focus {
   cursor: pointer;
   border: 2px solid #22cd6f;
 }
@@ -797,6 +803,10 @@ nav .menu li a:focus::after {
     width: 90vw;
     -ms-grid-columns: 1fr 1fr;
         grid-template-columns: 1fr 1fr;
+  }
+  #Contact {
+    height: auto;
+    padding: 50px 0px;
   }
 }
 
@@ -937,6 +947,26 @@ nav .menu li a:focus::after {
     width: 90vw;
     -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
+  }
+  #Contact .form h1 {
+    font-size: 3rem;
+    margin-bottom: 10px;
+  }
+  #Contact .form .con {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  #Contact .form .con .name,
+  #Contact .form .con .email {
+    width: 80vw;
+  }
+  #Contact .form .message_container .message {
+    width: 80vw;
   }
 }
 /*# sourceMappingURL=main.css.map */
